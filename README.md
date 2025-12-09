@@ -1,9 +1,9 @@
-# 🧠 **Proyecto: Jerarquía de Memoria con Caché Direct-Mapped (Write-Back)**
+# **Proyecto: Jerarquía de Memoria con Caché Direct-Mapped (Write-Back)**
 ### *Simulación en SystemVerilog – CPU Dummy · Data Cache · Main Memory · Testbench Autoverificable*
 
 ---
 
-## 📌 **Descripción general**
+## **Descripción general**
 
 Este proyecto implementa una **jerarquía de memoria completa** utilizando SystemVerilog.  
 Incluye:
@@ -25,7 +25,7 @@ El objetivo educativo es comprender:
 
 ---
 
-## 🧩 **Arquitectura del sistema**
+## **Arquitectura del sistema**
 
 ```
              +-----------------+
@@ -52,7 +52,7 @@ El objetivo educativo es comprender:
 
 ---
 
-## 📁 **Estructura del repositorio**
+## **Estructura del repositorio**
 
 ```
 ├── cpu_dummy.sv
@@ -65,7 +65,7 @@ El objetivo educativo es comprender:
 
 ---
 
-## 🔹 **1. Módulo `data_cache.sv` — Caché Direct-Mapped**
+## **1. Módulo `data_cache.sv` — Caché Direct-Mapped**
 
 Implementa:
 
@@ -76,7 +76,7 @@ Implementa:
 - *write-allocate*  
 - manejo de `valid`, `dirty` y `tag`
 
-### ✔ Características clave
+### Características clave
 
 - Divide la dirección en **tag / índice / offset**.
 - En *hit*:
@@ -87,7 +87,7 @@ Implementa:
   - realiza fetch del nuevo bloque desde memoria,
   - actualiza `tag`, `valid`, `dirty`.
 
-### ✔ FSM interna
+### FSM interna
 
 ```
 S_IDLE
@@ -101,14 +101,14 @@ S_MEM_READ ───────────────┘
 
 ---
 
-## 🔹 **2. Módulo `main_memory.sv` — Memoria de 64 KiB**
+## **2. Módulo `main_memory.sv` — Memoria de 64 KiB**
 
 - Memoria modelada para simulación.
 - Acceso **por bloques de 256 bits**.
 - Latencia configurable (2 ciclos).
 - Inicialización con patrón reconocible para debugging.
 
-### ✔ Flujo interno
+### Flujo interno
 
 ```
 Nueva operación →
@@ -120,7 +120,7 @@ Nueva operación →
 
 ---
 
-## 🔹 **3. Módulo `cpu_dummy.sv` — Generador de accesos**
+## **3. Módulo `cpu_dummy.sv` — Generador de accesos**
 
 Simula un mini procesador produciendo **una secuencia diseñada para probar la caché**.
 
@@ -135,7 +135,7 @@ Simula un mini procesador produciendo **una secuencia diseñada para probar la c
 | 4 | 0x0000 | Read | Miss |
 | 5 | 0x0400 | Read | Miss |
 
-### ✔ FSM del CPU dummy
+### FSM del CPU dummy
 
 ```
 ST_IDLE → ST_REQ → ST_WAIT → ST_IDLE → ... → ST_DONE
@@ -143,7 +143,7 @@ ST_IDLE → ST_REQ → ST_WAIT → ST_IDLE → ... → ST_DONE
 
 ---
 
-## 🔹 **4. Módulo `cache_top.sv` — Integración del sistema**
+## **4. Módulo `cache_top.sv` — Integración del sistema**
 
 Une:
 
@@ -155,7 +155,7 @@ Actúa como **DUT** para la verificación.
 
 ---
 
-## 🔹 **5. Testbench `tb_cache_top.sv` — Scoreboard autoverificable**
+## **5. Testbench `tb_cache_top.sv` — Scoreboard autoverificable**
 
 Implementa:
 
@@ -165,7 +165,7 @@ Implementa:
 - comparación automática entre resultados reales y esperados,
 - informe final en consola.
 
-### ✔ Ejemplo de salida
+### Ejemplo de salida
 
 ```
 ====================================================
@@ -178,7 +178,7 @@ Implementa:
 
 ---
 
-## ▶️ **Cómo ejecutar la simulación**
+## **Cómo ejecutar la simulación**
 
 ### Requisitos
 
@@ -203,7 +203,7 @@ gtkwave cache_wave.vcd
 
 ---
 
-## 📚 **Conceptos demostrados**
+## **Conceptos demostrados**
 
 - Organización y funcionamiento de una **caché direct-mapped**.  
 - Manejo completo de *hits* y *misses*.  
@@ -214,7 +214,7 @@ gtkwave cache_wave.vcd
 
 ---
 
-## 🏁 **Estado del proyecto**
+## **Estado del proyecto**
 
 ✔ Simulación funcional  
 ✔ Testbench autoverificable  
