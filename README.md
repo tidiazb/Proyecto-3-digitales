@@ -124,7 +124,7 @@ Nueva operación →
 
 Simula un mini procesador produciendo **una secuencia diseñada para probar la caché**.
 
-### ✔ Secuencia de operaciones
+### Secuencia de operaciones
 
 | Op | Dirección | Tipo | Resultado Esperado |
 |----|-----------|------|--------------------|
@@ -172,7 +172,7 @@ Implementa:
    RESUMEN TEST CACHE
    Chequeos realizados : 6
    Errores encontrados  : 0
-   RESULTADO: ** TEST PASSED ✅ **
+   RESULTADO: ** TEST PASSED **
 ====================================================
 ```
 
