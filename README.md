@@ -229,20 +229,8 @@ Gracias a este proceso de simulación en Vivado se validó completamente la jera
 ---
 
 
-### Comando típico
-
-```sh
-
-vvp cache_sim
-```
-
 ### Gráfica de ondas
 
-```
-<img width="1895" height="910" alt="image" src="https://raw.githubusercontent.com/tidiazb/Proyecto-3-digitales/refs/heads/main/Grafica%20de%20ondas.png" />
-
-
-```
 <img width="1895" height="910" alt="image" src="https://raw.githubusercontent.com/tidiazb/Proyecto-3-digitales/refs/heads/main/Grafica%20de%20ondas.png" />
 
 ## Resumen del comportamiento de las ondas
