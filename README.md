@@ -178,14 +178,48 @@ Implementa:
 
 ---
 
-## **Cómo ejecutar la simulación**
+## **Cómo se ejecutó la simulación**
 
-### Requisitos
+Para validar el funcionamiento del sistema jerárquico de memoria, la simulación se realizó en Vivado utilizando el flujo de simulación integrado (Vivado Simulator).
+El procedimiento seguido fue el siguiente:
 
-- Icarus Verilog  
-- Verilator  
-- Vivado Simulator  
-- EDA Playground  
+Se creó un proyecto nuevo en Vivado e importamos todos los módulos del diseño:
+
+cpu_dummy.sv
+
+data_cache.sv
+
+main_memory.sv
+
+cache_top.sv
+
+tb_cache.sv (testbench)
+
+Se configuró el archivo testbench tb_cache.sv como Top Module para la simulación.
+
+Se ejecutó Run Simulation → Run Behavioral Simulation.
+
+Vivado generó el archivo de ondas (.wdb) y permitió inspeccionar:
+
+señales entre CPU–caché
+
+señales entre caché–memoria
+
+hits, misses y write-backs
+
+máquina de estados
+
+bloques transferidos desde memoria
+
+Se verificó que los resultados coincidieran con el comportamiento esperado mediante:
+
+el scoreboard interno del testbench
+
+los mensajes $display
+
+la inspección de señales en el waveform
+
+Gracias a esta simulación en Vivado se validó todo el funcionamiento de la jerarquía de memoria y se confirmó que el diseño cumple con los requisitos del proyecto.
 
 ### Comando típico
 
