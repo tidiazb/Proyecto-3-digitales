@@ -203,14 +203,7 @@ gtkwave cache_wave.vcd
 
 ---
 
-## **Conceptos demostrados**
 
-- Organización y funcionamiento de una **caché direct-mapped**.  
-- Manejo completo de *hits* y *misses*.  
-- Ciclo write-back y write-allocate.  
-- Comunicación bloque-a-bloque entre caché y memoria.  
-- Verificación automática con *scoreboard*.  
-- Diseño modular en SystemVerilog.
 
 ---
 
