@@ -9,13 +9,13 @@ Este proyecto implementa una **jerarquía de memoria completa** utilizando Syste
 Incluye:
 
 - una **caché direct-mapped** de 1 KiB,
-- política **write-back** y **write-allocate**,
+- política **write-back**,
 - bloques de **32 bytes**,
 - una memoria principal de **64 KiB**,
 - un CPU de prueba (*cpu_dummy*),
 - y un **testbench autoverificable** que confirma el correcto funcionamiento del sistema.
 
-El objetivo educativo es comprender:
+El objetivo del proyecto es comprender:
 
 - organización de caché,  
 - detección de *hits* y *misses*,  
@@ -73,7 +73,6 @@ Implementa:
 - tamaño total: 1024 bytes  
 - bloques: 32B (256 bits)  
 - *write-back*  
-- *write-allocate*  
 - manejo de `valid`, `dirty` y `tag`
 
 ### Características clave
