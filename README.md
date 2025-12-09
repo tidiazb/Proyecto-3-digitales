@@ -244,8 +244,6 @@ vvp cache_sim
 gtkwave cache_wave.vcd
 ```
 
----
-
 
 
 ---
