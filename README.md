@@ -178,48 +178,57 @@ Implementa:
 
 ---
 
-## **Cómo se ejecutó la simulación**
 
-Para validar el funcionamiento del sistema jerárquico de memoria, la simulación se realizó en Vivado utilizando el flujo de simulación integrado (Vivado Simulator).
-El procedimiento seguido fue el siguiente:
+##  **Cómo se ejecutó la simulación**
 
-Se creó un proyecto nuevo en Vivado e importamos todos los módulos del diseño:
+Para validar el funcionamiento del sistema jerárquico de memoria, la simulación se realizó en **Vivado**, utilizando el flujo de simulación integrado (*Vivado Simulator*).
+El proceso seguido fue el siguiente:
 
-cpu_dummy.sv
+1. **Creación del proyecto en Vivado**
+   Se creó un proyecto RTL nuevo e importamos todos los módulos del diseño:
 
-data_cache.sv
+   * `cpu_dummy.sv`
+   * `data_cache.sv`
+   * `main_memory.sv`
+   * `cache_top.sv`
+   * `tb_cache.sv` *(testbench)*
 
-main_memory.sv
+2. **Selección del módulo superior para simulación**
+   Se configuró el archivo `tb_cache.sv` como **Top Module** en la vista de simulación.
 
-cache_top.sv
+3. **Ejecución del simulador**
+   Desde el menú principal se seleccionó:
 
-tb_cache.sv (testbench)
+   ```
+   Flow → Run Simulation → Run Behavioral Simulation
+   ```
 
-Se configuró el archivo testbench tb_cache.sv como Top Module para la simulación.
+   Vivado generó automáticamente el archivo de ondas (`.wdb`) y abrió el visor de señales.
 
-Se ejecutó Run Simulation → Run Behavioral Simulation.
+4. **Análisis del comportamiento del sistema**
+   En el waveform se inspeccionaron las señales internas para verificar:
 
-Vivado generó el archivo de ondas (.wdb) y permitió inspeccionar:
+   * comunicación CPU → caché
+   * comunicación caché → memoria
+   * hits y misses
+   * ciclos de write-back
+   * lectura de bloques desde memoria
+   * cambios en los bits válido/dirty
+   * estados internos de la máquina de estados de la caché
 
-señales entre CPU–caché
+5. **Validación del diseño**
+   El testbench utilizó un **scoreboard interno** para comparar:
 
-señales entre caché–memoria
+   * el hit/miss reportado por la caché
+   * el dato leído desde memoria
+   * el orden correcto de las operaciones
 
-hits, misses y write-backs
+   Además, los mensajes `$display` y las señales observadas permitieron confirmar visual y funcionalmente que el diseño se comportaba como se esperaba.
 
-máquina de estados
+Gracias a este proceso de simulación en Vivado se validó completamente la jerarquía de memoria y se comprobó el correcto funcionamiento de la caché, la memoria principal y la comunicación con la CPU simulada.
 
-bloques transferidos desde memoria
+---
 
-Se verificó que los resultados coincidieran con el comportamiento esperado mediante:
-
-el scoreboard interno del testbench
-
-los mensajes $display
-
-la inspección de señales en el waveform
-
-Gracias a esta simulación en Vivado se validó todo el funcionamiento de la jerarquía de memoria y se confirmó que el diseño cumple con los requisitos del proyecto.
 
 ### Comando típico
 
