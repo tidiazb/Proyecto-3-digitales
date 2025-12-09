@@ -216,10 +216,10 @@ gtkwave cache_wave.vcd
 
 ## **Estado del proyecto**
 
-✔ Simulación funcional  
-✔ Testbench autoverificable  
-✔ Jerarquía CPU–Cache–Memoria verificada  
-✔ Resultados correctos  
+ Simulación funcional  
+ Testbench autoverificable  
+ Jerarquía CPU–Cache–Memoria verificada  
+ Resultados correctos  
 
 ---
 
