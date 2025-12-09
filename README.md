@@ -232,7 +232,6 @@ Gracias a este proceso de simulación en Vivado se validó completamente la jera
 ### Comando típico
 
 ```sh
-iverilog -g2012 -o cache_sim   cpu_dummy.sv data_cache.sv main_memory.sv cache_top.sv tb_cache_top.sv
 
 vvp cache_sim
 ```
@@ -240,10 +239,11 @@ vvp cache_sim
 ### Gráfica de ondas
 
 ```
-<img width="1895" height="910" alt="image" src="https://github.com/user-attachments/assets/580fe7ba-2d82-4d80-8050-f50a4addfdbd" />
+<img width="1895" height="910" alt="image" src="https://raw.githubusercontent.com/tidiazb/Proyecto-3-digitales/refs/heads/main/Grafica%20de%20ondas.png" />
 
 
 ```
+<img width="1895" height="910" alt="image" src="https://raw.githubusercontent.com/tidiazb/Proyecto-3-digitales/refs/heads/main/Grafica%20de%20ondas.png" />
 
 ## Resumen del comportamiento de las ondas
 
