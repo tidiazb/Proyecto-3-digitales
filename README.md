@@ -237,11 +237,24 @@ iverilog -g2012 -o cache_sim   cpu_dummy.sv data_cache.sv main_memory.sv cache_t
 vvp cache_sim
 ```
 
-### Ver ondas
+### Gráfica de ondas
 
-```sh
-gtkwave cache_wave.vcd
 ```
+<img width="1895" height="910" alt="image" src="https://github.com/user-attachments/assets/580fe7ba-2d82-4d80-8050-f50a4addfdbd" />
+
+
+```
+
+## Resumen del comportamiento de las ondas
+
+| Operación | Dirección | Hit/Miss          | Explicación                            |
+| --------- | --------- | ----------------- | -------------------------------------- |
+| 0         | 0x0000    | Miss              | Carga inicial del bloque               |
+| 1         | 0x0004    | Hit               | Misma línea que op0                    |
+| 2         | 0x0008    | Hit               | Escritura en línea existente (dirty=1) |
+| 3         | 0x0400    | Miss + Write-back | Conflicto de índice, línea sucia       |
+| 4         | 0x0000    | Miss              | La línea había sido reemplazada        |
+| 5         | 0x0400    | Miss              | Línea también fue reemplazada          |
 
 
 
